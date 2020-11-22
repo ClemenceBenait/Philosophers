@@ -22,6 +22,24 @@ public class Philosopher
 
     @Override
     public void run() {
+        while(running) {
+            // tant qu’il ne quitte pas la table
+            think();
+            
+            // Si les deux baguettes sont disponibles Prendre les 2 baguettes
+            
+            if (myLeftStick.Statut()== true & myRightStick.Statut()== true) {
+            
+            myLeftStick.take();
+            myRightStick.take();
+            //Manger
+            eat();
+            // Il relache les baguettes
+            myLeftStick.release();
+            myRightStick.release();
+            }
+        }
+
 
     }
 
